@@ -354,6 +354,34 @@ ul  { list-style: none; }
 .local__btn--online:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
 
 /* ===========================
+   REELS INSTAGRAM
+=========================== */
+.reels__track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 40px;
+}
+.reels__track::-webkit-scrollbar { height: 4px; }
+.reels__track::-webkit-scrollbar-track { background: var(--beige-dark); border-radius: 2px; }
+.reels__track::-webkit-scrollbar-thumb { background: var(--gold-light); border-radius: 2px; }
+
+.reels__item {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  width: 320px !important;
+  min-width: 320px;
+  margin: 0 !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid rgba(154,123,63,0.14) !important;
+}
+
+.reels__cta { text-align: center; }
+
+/* ===========================
    DEPOIMENTOS
 =========================== */
 .depo__score {
