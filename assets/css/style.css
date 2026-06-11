@@ -84,6 +84,8 @@ ul  { list-style: none; }
 .btn--white:hover { background: transparent; color: var(--white); transform: translateY(-2px); }
 .btn--outline-white { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.6); }
 .btn--outline-white:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+.btn--outline-hero { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.7); }
+.btn--outline-hero:hover { background: rgba(255,255,255,0.15); color: var(--white); transform: translateY(-2px); }
 
 /* ===========================
    HEADER / NAV
