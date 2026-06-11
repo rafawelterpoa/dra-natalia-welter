@@ -354,6 +354,25 @@ ul  { list-style: none; }
 .local__btn--online:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
 
 /* ===========================
+   CONTEÚDO & AVALIAÇÕES
+=========================== */
+.conteudo__sub-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 24px;
+  color: var(--gold-dark);
+}
+.conteudo__sub-header--mt { margin-top: 56px; }
+.conteudo__sub-header span {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold-dark);
+}
+.conteudo__sub-header::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(to right, var(--gold-light), transparent);
+  opacity: 0.4;
+}
+
+/* ===========================
    REELS INSTAGRAM
 =========================== */
 .reels__track {
