@@ -615,20 +615,21 @@ ul  { list-style: none; }
    HERO BADGE SOCIAL PROOF
 =========================== */
 .hero__badge-social {
-  display: inline-flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 14px;
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.25);
   backdrop-filter: blur(8px);
-  padding: 10px 18px; border-radius: 40px;
+  padding: 13px 24px; border-radius: 40px;
   margin-bottom: 28px;
   transition: var(--transition);
   text-decoration: none;
+  width: fit-content;
 }
 .hero__badge-social:hover { background: rgba(255,255,255,0.2); }
-.hero__badge-stars { color: #F5C518; font-size: 0.95rem; letter-spacing: 1px; }
-.hero__badge-text { display: flex; align-items: center; gap: 6px; }
-.hero__badge-text strong { font-size: 0.88rem; color: var(--white); font-weight: 600; }
-.hero__badge-text span { font-size: 0.78rem; color: rgba(255,255,255,0.8); letter-spacing: 0.03em; }
+.hero__badge-stars { color: #F5C518; font-size: 1.15rem; letter-spacing: 2px; }
+.hero__badge-text { display: flex; align-items: center; gap: 8px; }
+.hero__badge-text strong { font-size: 1.05rem; color: var(--white); font-weight: 600; }
+.hero__badge-text span { font-size: 0.92rem; color: rgba(255,255,255,0.85); letter-spacing: 0.03em; }
 
 /* ===========================
    WHATSAPP FLUTUANTE — PULSE
