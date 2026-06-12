@@ -16,7 +16,7 @@ navMenu.querySelectorAll('.nav__link').forEach(link => {
   link.addEventListener('click', () => navMenu.classList.remove('open'));
 });
 
-// Scroll reveal
+// Scroll reveal — observa TODOS os [data-reveal] do HTML
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -24,9 +24,13 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(e.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.08 });
 
-document.querySelectorAll('.card, .step, .sobre__content, .sobre__image-wrap, .contato__info, .contato__map')
+// Elementos com data-reveal no HTML
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+// Elementos que ganham data-reveal via JS
+document.querySelectorAll('.card, .step, .sobre__content, .sobre__image-wrap, .contato__info, .contato__map, .depo__card, .local__card')
   .forEach(el => {
     el.setAttribute('data-reveal', '');
     observer.observe(el);
