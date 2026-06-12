@@ -55,7 +55,7 @@ ul  { list-style: none; }
   color: var(--gold-dark);
 }
 .section__title em { font-style: italic; color: var(--gold); }
-.section__header    { text-align: center; margin-bottom: 56px; }
+.section__header    { text-align: center; margin-bottom: 40px; }
 
 /* ===========================
    BUTTONS
@@ -297,6 +297,7 @@ ul  { list-style: none; }
 /* ===========================
    STEPS (CONSULTA)
 =========================== */
+.consulta { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
 .steps { display: flex; align-items: flex-start; }
 .step  { flex: 1; padding: 0 24px; text-align: center; }
 .step__number {
@@ -314,7 +315,7 @@ ul  { list-style: none; }
 /* ===========================
    LOCAIS DE ATENDIMENTO
 =========================== */
-.locais__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.locais__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: -8px; }
 
 .local__card {
   background: var(--white); padding: 32px 28px; border-radius: var(--radius);
