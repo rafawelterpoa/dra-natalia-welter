@@ -106,7 +106,7 @@ ul  { list-style: none; }
 
 .nav__link {
   font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gold-dark); transition: color var(--transition); position: relative;
+  color: var(--white); transition: color var(--transition); position: relative;
 }
 .nav__link::after {
   content: ''; position: absolute; bottom: -3px; left: 0;
@@ -117,84 +117,63 @@ ul  { list-style: none; }
 .header.scrolled .nav__link { color: var(--gold-dark); }
 .header.scrolled .nav__link:hover { color: var(--gold); }
 
-.nav__link--cta { padding: 8px 20px; border: 1.5px solid var(--gold); border-radius: var(--radius); }
+.nav__link--cta { padding: 8px 20px; border: 1.5px solid rgba(255,255,255,0.6); border-radius: var(--radius); }
 .nav__link--cta:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
 .nav__link--cta::after { display: none; }
 .header.scrolled .nav__link--cta { border-color: var(--gold); }
 
 .nav__toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-.nav__toggle span { display: block; width: 24px; height: 1.5px; background: var(--gold-dark); transition: var(--transition); }
+.nav__toggle span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: var(--transition); }
 .header.scrolled .nav__toggle span { background: var(--gold-dark); }
 
 /* ===========================
-   HERO — SPLIT MÁRMORE + FOTO
+   HERO
 =========================== */
 .hero {
-  min-height: 100svh;
-  display: flex;
-  overflow: hidden;
-  position: relative;
+  position: relative; min-height: 100svh;
+  display: flex; align-items: center; overflow: hidden;
 }
-
-/* LADO ESQUERDO — MÁRMORE */
 .hero__bg {
-  display: none; /* não usado neste layout */
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    linear-gradient(105deg, rgba(50,33,15,0.96) 0%, rgba(80,58,24,0.90) 42%, rgba(137,107,69,0.65) 70%, rgba(201,169,110,0.25) 100%),
+    url('../images/foto-dra-natalia.jpg') center top / cover no-repeat;
 }
-
-.hero__grid { display: contents; }
-
-.hero__content {
-  flex: 1;
-  position: relative; z-index: 2;
-  padding: 130px 72px 80px;
-  display: flex; flex-direction: column; justify-content: center;
-  background-color: #E8E1D7;
-  background-image:
-    radial-gradient(ellipse 120% 60% at 10% 40%, rgba(201,169,110,0.18) 0%, transparent 65%),
-    radial-gradient(ellipse 80% 40% at 80% 80%, rgba(201,169,110,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 30% at 50% 10%, rgba(201,169,110,0.08) 0%, transparent 70%),
-    repeating-linear-gradient(125deg, transparent 0, transparent 55px, rgba(201,169,110,0.05) 55px, rgba(201,169,110,0.05) 56px),
-    repeating-linear-gradient(35deg, transparent 0, transparent 85px, rgba(201,169,110,0.04) 85px, rgba(201,169,110,0.04) 86px);
+.hero__grid {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 460px;
+  gap: 60px; align-items: center;
+  padding-top: 100px; padding-bottom: 60px;
+  min-height: 100svh; width: 100%;
 }
-
+.hero__content { max-width: 580px; }
 .hero__eyebrow {
   font-size: 0.65rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--gold-dark); margin-bottom: 20px;
+  color: rgba(232,225,215,0.75); margin-bottom: 20px;
 }
 .hero__title {
-  font-family: var(--font-serif); font-size: clamp(2.8rem, 4.5vw, 4.6rem);
-  font-weight: 300; line-height: 1.05; color: var(--text); margin-bottom: 10px;
+  font-family: var(--font-serif); font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 300; line-height: 1.05; color: var(--white); margin-bottom: 10px;
 }
-.hero__title em { font-style: italic; color: var(--gold-dark); }
+.hero__title em { font-style: italic; font-weight: 400; color: var(--beige); }
 .hero__specialty {
   font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--text-light); margin-bottom: 8px;
+  color: rgba(232,225,215,0.65); margin-bottom: 8px;
 }
 .hero__crm {
-  font-size: 0.58rem; letter-spacing: 0.12em; color: var(--brown);
+  font-size: 0.6rem; letter-spacing: 0.12em; color: rgba(232,225,215,0.45);
   margin-bottom: 28px; text-transform: uppercase;
 }
-.hero__text {
-  font-size: 0.92rem; color: var(--text-light);
-  max-width: 440px; margin-bottom: 36px; line-height: 1.8;
-}
+.hero__text { font-size: 0.95rem; color: rgba(232,225,215,0.85); max-width: 480px; margin-bottom: 40px; line-height: 1.8; }
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-/* LADO DIREITO — FOTO */
-.hero__photo {
-  width: 460px; flex-shrink: 0;
-  position: relative; overflow: hidden;
-  background: var(--beige-dark);
-}
-.hero__photo-frame {
-  position: absolute; inset: 20px;
-  border: 1.5px solid rgba(201,169,110,.5);
-  z-index: 2; pointer-events: none;
-}
+/* FOTO NO HERO */
+.hero__photo { position: relative; display: flex; align-items: flex-end; }
+.hero__photo-frame { position: relative; width: 100%; max-width: 460px; }
 .hero__photo-img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: top center;
-  display: block; min-height: 100svh;
+  width: 100%; height: 580px; object-fit: cover; object-position: top center;
+  border-radius: 2px 2px 0 0;
+  box-shadow: -16px 16px 64px rgba(0,0,0,0.35);
 }
 
 /* scroll indicator */
@@ -385,23 +364,25 @@ ul  { list-style: none; }
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  padding-bottom: 16px;
+  padding: 8px 0 20px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   margin-bottom: 40px;
+  align-items: flex-start;
 }
 .reels__track::-webkit-scrollbar { height: 4px; }
 .reels__track::-webkit-scrollbar-track { background: var(--beige-dark); border-radius: 2px; }
 .reels__track::-webkit-scrollbar-thumb { background: var(--gold-light); border-radius: 2px; }
 
 .reels__item {
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
   scroll-snap-align: start;
-  width: 320px !important;
-  min-width: 320px;
+  width: 300px !important;
+  min-width: 300px !important;
+  max-width: 300px !important;
   margin: 0 !important;
   border-radius: var(--radius) !important;
-  border: 1px solid rgba(154,123,63,0.14) !important;
+  border: 1px solid rgba(201,169,110,0.2) !important;
 }
 
 .reel__wrap {
