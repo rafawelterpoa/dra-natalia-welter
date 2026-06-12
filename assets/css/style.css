@@ -625,10 +625,10 @@ ul  { list-style: none; }
   text-decoration: none;
 }
 .hero__badge-social:hover { background: rgba(255,255,255,0.2); }
-.hero__badge-stars { color: #F5C518; font-size: 1rem; letter-spacing: 2px; }
-.hero__badge-text { display: flex; flex-direction: column; gap: 1px; }
-.hero__badge-text strong { font-size: 0.95rem; color: var(--white); font-weight: 600; line-height: 1; }
-.hero__badge-text span { font-size: 0.65rem; color: rgba(255,255,255,0.75); letter-spacing: 0.06em; }
+.hero__badge-stars { color: #F5C518; font-size: 0.95rem; letter-spacing: 1px; }
+.hero__badge-text { display: flex; align-items: center; gap: 6px; }
+.hero__badge-text strong { font-size: 0.88rem; color: var(--white); font-weight: 600; }
+.hero__badge-text span { font-size: 0.78rem; color: rgba(255,255,255,0.8); letter-spacing: 0.03em; }
 
 /* ===========================
    WHATSAPP FLUTUANTE — PULSE
