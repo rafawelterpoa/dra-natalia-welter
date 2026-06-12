@@ -36,6 +36,40 @@ document.querySelectorAll('.card, .step, .sobre__content, .sobre__image-wrap, .c
     observer.observe(el);
   });
 
+// FAQ accordion
+document.querySelectorAll('.faq__question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq__item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Contador animado nos números
+function animateCounter(el, target, duration = 1400) {
+  const isText = isNaN(target);
+  if (isText) { el.textContent = target; return; }
+  let start = 0; const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) { el.textContent = target; clearInterval(timer); return; }
+    el.textContent = Math.floor(start);
+  }, 16);
+}
+const numObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const strong = e.target.querySelector('strong');
+    if (!strong || strong.dataset.counted) return;
+    strong.dataset.counted = '1';
+    const val = strong.textContent.trim();
+    if (val === 'Online' || val === '100%') { return; }
+    animateCounter(strong, parseInt(val.replace(/\D/g, '')));
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.numero__item').forEach(el => numObserver.observe(el));
+
 // Active nav link on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('.nav__link:not(.nav__link--cta)');

@@ -610,3 +610,104 @@ ul  { list-style: none; }
   .numeros__grid { grid-template-columns: repeat(2, 1fr); }
   .sobre__crms { justify-content: center; }
 }
+
+/* ===========================
+   HERO BADGE SOCIAL PROOF
+=========================== */
+.hero__badge-social {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  padding: 10px 18px; border-radius: 40px;
+  margin-bottom: 28px;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.hero__badge-social:hover { background: rgba(255,255,255,0.2); }
+.hero__badge-stars { color: #F5C518; font-size: 1rem; letter-spacing: 2px; }
+.hero__badge-text { display: flex; flex-direction: column; gap: 1px; }
+.hero__badge-text strong { font-size: 0.95rem; color: var(--white); font-weight: 600; line-height: 1; }
+.hero__badge-text span { font-size: 0.65rem; color: rgba(255,255,255,0.75); letter-spacing: 0.06em; }
+
+/* ===========================
+   WHATSAPP FLUTUANTE — PULSE
+=========================== */
+@keyframes pulse-wa {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+.whatsapp-float { animation: pulse-wa 2s infinite; }
+
+/* ===========================
+   NÚMEROS — CONTADOR
+=========================== */
+.numero__item strong { display: block; }
+
+/* ===========================
+   REELS — LAZY THUMBNAIL
+=========================== */
+.reel__thumb {
+  position: relative; cursor: pointer;
+  border-radius: var(--radius); overflow: hidden;
+  background: #1a1a1a;
+  aspect-ratio: 9/16;
+  display: flex; align-items: center; justify-content: center;
+}
+.reel__thumb img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.4s ease;
+  opacity: 0.85;
+}
+.reel__thumb:hover img { transform: scale(1.04); opacity: 1; }
+.reel__play {
+  position: absolute;
+  width: 52px; height: 52px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+.reel__thumb:hover .reel__play { transform: scale(1.1); }
+.reel__play svg { margin-left: 3px; }
+
+/* ===========================
+   FAQ
+=========================== */
+.faq__list { max-width: 800px; margin-inline: auto; display: flex; flex-direction: column; gap: 0; }
+
+.faq__item {
+  border-bottom: 1px solid rgba(137,107,69,0.2);
+  overflow: hidden;
+}
+.faq__item:first-child { border-top: 1px solid rgba(137,107,69,0.2); }
+
+.faq__question {
+  width: 100%; text-align: left;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 22px 0;
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400;
+  color: var(--accent); transition: color var(--transition);
+}
+.faq__question:hover { color: var(--accent-light); }
+
+.faq__icon {
+  font-size: 1.4rem; font-weight: 300; color: var(--accent);
+  transition: transform 0.3s ease; flex-shrink: 0; line-height: 1;
+}
+.faq__item.open .faq__icon { transform: rotate(45deg); }
+
+.faq__answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+.faq__answer p {
+  padding-bottom: 20px; color: var(--text-light);
+  font-size: 0.92rem; line-height: 1.8;
+}
+.faq__answer a { color: var(--accent); text-decoration: underline; }
+.faq__item.open .faq__answer { max-height: 300px; }
