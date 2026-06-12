@@ -175,14 +175,22 @@ ul  { list-style: none; }
 /* FOTO NO HERO */
 .hero__photo {
   position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0;
 }
 .hero__photo-frame {
-  position: absolute; inset: 0;
+  width: 100%;
+  max-width: 420px;
 }
 .hero__photo-img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: top center;
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 4px 4px 0 0;
+  box-shadow: -20px 0 60px rgba(0,0,0,0.4);
   display: block;
 }
 
